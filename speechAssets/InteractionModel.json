@@ -1,0 +1,24 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "chat",
+            "types": [
+                {
+                    "name": "boolean",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "yes"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "no"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

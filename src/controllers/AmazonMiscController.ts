@@ -23,16 +23,8 @@ class AmazonMiscController {
 
     help(intentHandler: Alexa.Handler<Alexa.Request>): void {
         console.log(`[help]: request = ${JSON.stringify(intentHandler.event.request)}`);
-        let instruction = '';
-        instruction += 'If you want to list all existing channels, please say, List channels.';
-        instruction += 'If you want to join a channel, please say, Join channel, followed by your channel name.';
-        instruction += 'If you want to create a channel, please say, Create channel, followed by your channel name.';
-        instruction += 'If you want to logout from Halloo, please say log me out from halloo.';
-        instruction += 'If you want to leave your channel, please say, Leave channel, followed by your channel name. ';
-
-        const repromptText = 'If you want to repeat these instructions, please say, Repeat the instructions';
-        intentHandler.emit(':ask', instruction, repromptText);
-
+        const instruction = 'I\'m not very helpful yet, sorry about that';
+        intentHandler.emit(':ask', instruction);
     }
 }
 

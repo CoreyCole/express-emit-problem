@@ -1,4 +1,5 @@
 import * as Alexa from 'alexa-sdk';
+import { red } from 'colors';
 
 import PromptsService from './services/PromptsService';
 import AmazonMiscController from './controllers/AmazonMiscController';
@@ -43,8 +44,9 @@ export const handler = (event: Alexa.RequestBody<Alexa.Request>, context: Alexa.
                 .substring(3) // Removes three first characters ("at ")
                 .replace(__dirname, '') // Removes script folder path
                 .replace(/\s\(./, ' at ') // Removes first parentheses and replaces it with " at "
-                .replace(/\)/, ''); // Removes last parentheses
-            originalMethod.apply(console, [errorLine, '\n', ...args]);
+                .replace(/\)/, '') // Removes last parentheses
+            const colorLine = red(errorLine);
+            originalMethod.apply(console, [colorLine, '\n', ...args]);
         }
     };
 });
